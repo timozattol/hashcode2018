@@ -46,9 +46,9 @@ if __name__ == '__main__':
 
         earliest_available_car = cars[earliest_available_car_i]
 
-        arrival_time = earliest_available_car[2] + \
-            distance(earliest_available_car[1], (ride[0], ride[1])) + \
-            distance((ride[0], ride[1]), (ride[2], ride[3]))
+        available_to_departure_time = earliest_available_car[2] + distance(earliest_available_car[1], (ride[0], ride[1]))
+        departure_time = max(available_to_departure_time, ride[4])
+        arrival_time = departure_time + distance((ride[0], ride[1]), (ride[2], ride[3]))
 
         # If errors, set < to be sure ;)
         if arrival_time <= ride[5]:
