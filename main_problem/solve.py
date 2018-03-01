@@ -4,6 +4,10 @@ import numpy as np
 lines = sys.stdin.readlines()
 lines = [line.strip() for line in lines]
 
+R, C, F, N, B, T = [int(x) for x in (lines[0].split())]
 
-def distance(x0, y0, x1, y1):
-    return abs(x1 - x0) + abs(y1 - y0)
+rides = [tuple(map(int, line.split())) for line in lines[1:]]
+
+print(R, C, F, N, B, T)
+
+print(rides)
